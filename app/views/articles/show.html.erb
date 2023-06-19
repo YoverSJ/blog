@@ -2,6 +2,8 @@
 
     <h2><%= @article.title %></h2>
 
+    <p><b>Creado por:</b> <%= @article.user.blank? ? '' : @article.user.email %></p>
+
     <p><%= @article.content %></p>
 
     <div class="d-flex gap-2">
