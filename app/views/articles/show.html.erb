@@ -1,4 +1,9 @@
-<h2><%= @article.title %></h2>
+<div class="small-container center-block">
+    <h2><%= @article.title %></h2>
 
-<%= link_to "Editar", article_edit_path %>
-<%= button_to "Eliminar", @article, method: :delete %>
+    <div class="d-flex gap-2">
+        <%= link_to "Editar", article_edit_path, class: "btn btn-primary" %>
+        <%= button_to "Eliminar", @article, method: :delete, class: "btn btn-danger" %>
+    </div>
+    
+</div>
