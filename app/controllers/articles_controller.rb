@@ -6,7 +6,7 @@ class ArticlesController < ApplicationController
     
     def create
         @article = Article.create(title: params[:article][:title])
-        render json: @article
+        redirect_to @article
     end
 
     def index
@@ -25,6 +25,12 @@ class ArticlesController < ApplicationController
         @article = Article.find(params[:id])
         @article.update(title: params[:article][:title])
         redirect_to @article
+    end
+
+    def destroy
+        @article = Article.find(params[:id])
+        @article.destroy
+        redirect_to root_path
     end
 
 end
