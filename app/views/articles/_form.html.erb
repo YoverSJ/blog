@@ -1,12 +1,12 @@
 <%= form_with(model: @article) do |form| %>
     
-    <div>
-        <%= form.label :title %>
-        <%= form.text_field :title %>
+    <div class="mb-3">
+        <%= form.label :title, class: "form-label" %>
+        <%= form.text_field :title, class: "form-control" %>
     </div>
 
-    <div>
-        <%= form.submit %>
+    <div class="mb-3">
+        <%= form.submit class: "btn btn-primary" %>
     </div>
 
 <% end %>
