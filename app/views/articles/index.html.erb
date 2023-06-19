@@ -5,12 +5,6 @@
         <%= link_to "Nuevo", articles_new_path, class: "btn btn-primary" %>
     </div>
     
-    <% @articles.each do |article| %>
-        <div class="card padding mb-2">
-            <h5 class="text-uppercase"><%= article.title %></h5>
-            <p class="text-secondary"><%= article.created_at %></p>
-            <%= link_to "Ver", article, class: "btn-link" %>
-        </div>
-    <% end %>
-    
+    <%= render @articles %>
+
 </div>
