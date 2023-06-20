@@ -26,4 +26,8 @@ Rails.application.routes.draw do
     get ":id/articles", to: "categories#category_articles", on: :collection, as: :category_articles
   end
 
+  get "perfil", to: "users#edit"
+
+  resources :users, only: [:update]
+
 end

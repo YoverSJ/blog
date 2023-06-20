@@ -1,6 +1,10 @@
 <div class="small-container center-block padding">
   <h2>Editar Perfil</h2>
 
+  <div class="mb-2">
+    <%= link_to "Foto", perfil_path, class: "btn btn-light" %>
+  </div>
+
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
 

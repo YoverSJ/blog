@@ -1,0 +1,27 @@
+<div class="small-container center-block padding">
+    <h2>Editar Foto de Perfil</h2>
+
+    <% if current_user.avatar.attached? %>
+        <div>
+            <%= image_tag url_for(current_user.avatar), width: "40%", class:"d-block mx-auto" %>
+            <p class="text-center"><%= current_user.avatar.blob.filename %></p>
+        </div>
+    <% else %>
+        <p>Aun no tienes una foto de perfil</p>
+    <% end %>
+    
+
+    <%= form_with(model: current_user, local: true) do |form| %>
+
+        <div class="mb-3">
+            <%= form.label :avatar, class: "form-label" %>
+            <%= form.file_field :avatar, accept: "image/*", class: "form-control" %>
+        </div>
+
+        <div class="mb-3">
+            <%= form.submit class: "btn btn-primary"%>
+        </div>
+
+    <% end %>
+
+</div>
