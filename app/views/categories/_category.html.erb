@@ -1,12 +1,9 @@
-<div id="<%= dom_id category %>">
-  <p>
-    <strong>Title:</strong>
-    <%= category.title %>
-  </p>
+<div id="<%= dom_id category %>" class="card padding mb-3">
 
-  <p>
-    <strong>Color:</strong>
-    <%= category.color %>
-  </p>
+  <h5><%= category.title %></h5>
+
+  <p><%= category.color %></p>
+  
+  <%= link_to "Ver", category %>
 
 </div>
