@@ -1,10 +1,17 @@
-<div class="small-container center-block">
+<div class="small-container center-block padding">
 
     <h2><%= @article.title %></h2>
 
     <p><b>Creado por:</b> <%= @article.user.blank? ? '' : @article.user.email %></p>
 
     <p><%= @article.content %></p>
+
+    <div class="mb-3">
+        <h6>Categorias</h6>
+        <% @article.categories.each do |category| %>
+          <span class="badge rounded-pill padding" style="background-color: <%= category.color %>"><%= category.title %></span>
+        <% end %>
+    </div>
 
     <div class="d-flex gap-2">
         <%= link_to "Editar", edit_article_path, class: "btn btn-primary" %>
