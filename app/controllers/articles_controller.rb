@@ -40,4 +40,8 @@ class ArticlesController < ApplicationController
         params.require(:article).permit(:title, :content)
     end
 
+    def user_articles
+        
+    end
+
 end
