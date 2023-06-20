@@ -11,9 +11,11 @@ class Article < ApplicationRecord
 
     def save_categories
         
+        return has_categories.destroy_all if category_elements.blank?
+
         category_elements.each do |category|
             
-            HasCategory.create(article: self, category_id: category)
+            HasCategory.find_or_create_by(article: self, category_id: category)
 
         end
 

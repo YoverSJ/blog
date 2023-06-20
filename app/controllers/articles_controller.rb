@@ -27,6 +27,7 @@ class ArticlesController < ApplicationController
 
     def update
         @article.update(article_params)
+        @article.save_categories
         redirect_to @article
     end
 
