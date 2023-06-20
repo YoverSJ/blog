@@ -4,6 +4,10 @@
 
     <p><b>Creado por:</b> <%= @article.user.blank? ? '' : @article.user.email %></p>
 
+    <% if @article.user.avatar.attached? %>
+      <%= image_tag url_for(@article.user.avatar), height: 40 %>
+    <% end %>
+
     <p><%= @article.content %></p>
 
     <div class="mb-3">
