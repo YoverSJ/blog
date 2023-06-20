@@ -26,14 +26,26 @@ class ArticlesController < ApplicationController
     end
 
     def update
-        @article.update(article_params)
-        @article.save_categories
-        redirect_to @article
+
+        if @article.user == current_user
+            @article.update(article_params)
+            @article.save_categories
+            redirect_to @article
+        else
+            redirect_to @article, alert: "No puedes editar un articulo que no te pertenece"
+        end
+        
     end
 
     def destroy
-        @article.destroy
-        redirect_to articles_path
+
+        if @article.user == current_user
+            @article.destroy
+            redirect_to articles_path
+        else
+            redirect_to @article, alert: "No puedes eliminar un articulo que no te pertenece"
+        end
+        
     end
 
     def find_article
