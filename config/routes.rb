@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :categories
+  
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -20,6 +20,10 @@ Rails.application.routes.draw do
 
   resources :articles do
     get "user/myarticles", to: "articles#user_articles", on: :collection
+  end
+  
+  resources :categories do
+    get ":id/articles", to: "categories#category_articles", on: :collection, as: :category_articles
   end
 
 end

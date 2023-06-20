@@ -1,7 +1,7 @@
 class CategoriesController < ApplicationController
 
   before_action :authenticate_user!
-  before_action :set_category, only: %i[ show edit update destroy ]
+  before_action :set_category, only: %i[ show edit update destroy category_articles]
 
   # GET /categories or /categories.json
   def index
@@ -57,6 +57,10 @@ class CategoriesController < ApplicationController
       format.html { redirect_to categories_url, notice: "Category was successfully destroyed." }
       format.json { head :no_content }
     end
+  end
+
+  def category_articles
+    
   end
 
   private

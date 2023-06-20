@@ -9,7 +9,9 @@
     <div class="mb-3">
         <h6>Categorias:</h6>
         <% @article.categories.each do |category| %>
-          <span class="badge rounded-pill padding" style="background-color: <%= category.color %>"><%= category.title %></span>
+            <span class="badge rounded-pill padding" style="background-color: <%= category.color %>">
+                <%= link_to category.title, category_articles_categories_path(category), class: "text-decoration-none text-white" %>
+            </span>
         <% end %>
     </div>
 
